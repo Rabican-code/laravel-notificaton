@@ -23,7 +23,7 @@
         @endif
 
     </div>
-    <input type="text" id="siteId" name="siteId" placeholder="Website Id"/>
+
     <button onclick="subscribe()">Subscribe</button>
 
     <script>

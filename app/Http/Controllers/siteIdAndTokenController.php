@@ -11,7 +11,6 @@ class siteIdAndTokenController extends Controller
     public function saveSiteIdAndToken(Request $request)
     {
         $post = new siteIdAndToken;
-        $post->site_id = $request->siteId;
         $post->token = $request->token;
         $post->save();
     }
