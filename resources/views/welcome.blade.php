@@ -9,6 +9,20 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="flex-center position-ref full-height">
+
+        @if (Route::has('login') && Auth::check())
+            <div class="top-right links">
+                <a href="{{ url('/home') }}">Dashboard</a>
+            </div>
+        @elseif (Route::has('login') && !Auth::check())
+            <div class="top-right links">
+                <a href="{{ url('/login') }}">Login</a>
+                <a href="{{ url('/register') }}">Register</a>
+            </div>
+        @endif
+
+    </div>
     <input type="text" id="siteId" name="siteId" placeholder="Website Id"/>
     <button onclick="subscribe()">Subscribe</button>
 
