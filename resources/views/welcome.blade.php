@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
@@ -38,6 +37,7 @@
         var token = JSON.stringify(push)
         var siteId = $('#siteId').val();
         $.post("save",{siteId:siteId,token:token,_token: '{{csrf_token()}}'});
+        alert("Subscribed to this site");
       }
 
       if ('serviceWorker' in navigator) {
@@ -45,6 +45,7 @@
           let sw = await navigator.serviceWorker.register('./sw.js');
           console.log(sw);
         });
+
       }
     </script>
 
